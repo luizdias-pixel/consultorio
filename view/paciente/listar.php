@@ -5,6 +5,7 @@ include('../includes/cabecalho.php');
 include('../includes/menu.php');
 include('../includes/rodape.php');
 
+
 $pacientes = Paciente::listar();
 ?>
 <main class="container">

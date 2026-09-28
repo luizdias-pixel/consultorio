@@ -16,9 +16,7 @@ switch ($action) {
         $paciente->convenio = $_POST['convenio'];
         $paciente->observacao = $_POST['observacao'];
         $paciente->cadastrar();
-        echo "<pre>";
-        print_r($paciente);
-        echo "<pre>";
+        
     //header('location: /consultorio/view/paciente.php')
     break;
     case 'alterar':
