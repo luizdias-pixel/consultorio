@@ -52,4 +52,8 @@ class DataBase{
 
     }
 
+    public  function select(){
+        $query = 'select * from paciente';
+        return $this->execute($query);
+    }
 }

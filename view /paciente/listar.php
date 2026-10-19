@@ -1,5 +1,6 @@
 <?php
 use App\Paciente;
+
 include('../includes/cabecalho.php');
 include('../includes/menu.php');
 include('../includes/rodape.php');

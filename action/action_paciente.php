@@ -1,8 +1,6 @@
 <?php
-
 use App\Paciente;
-require('../vendor/autoload.php');
-
+include('../vendor/autoload.php');
 $action = $_GET['action'];
 $paciente = new Paciente();
 switch ($action) {
@@ -14,10 +12,11 @@ switch ($action) {
         $paciente->email = $_POST['email'];
         $paciente->endereco = $_POST['endereco'];
         $paciente->convenio = $_POST['convenio'];
-        $paciente->observacao = $_POST['observacao'];
+        $paciente->observacao = $_POST['observacao']; 
         $paciente->cadastrar();
         
-    //header('location: /consultorio/view/paciente.php')
+        header('location: /consultorio/view/paciente/listar.php');
+
     break;
     case 'alterar':
         echo "<pre>";
