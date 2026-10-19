@@ -21,7 +21,8 @@ class DataBase{
     }
     
     private function setConnection(){
-        $this->connection = new PDO('mysql:host='.self::HOST.';dbname='.self::DBNAME, self::USER, self::PASSWORD);
+        $this->connection = new PDO
+        ('mysql:host='.self::HOST.';dbname='.self::DBNAME, self::USER, self::PASSWORD);
         $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
 
@@ -44,8 +45,8 @@ class DataBase{
     $fields = array_keys($array);
     $binds = array_pad([],count ($array),'?');
     $query = 'insert into '.$this->table.' ('.implode(', ', $fields).')
-    values('.implode(', ', $binds).')';
-
+    values('.implode(', ',$binds).')';
+    
     $this->execute($query , array_values($array));
         return $this->connection->lastInsertId();
 
